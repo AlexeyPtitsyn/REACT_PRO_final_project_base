@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import s from './LikeButton.module.css';
 import { ReactComponent as LikeSvg } from './../../../assets/icons/like.svg';
 import classNames from 'classnames';
@@ -9,11 +10,12 @@ import {
 	IErrorResponse,
 } from '../../../store/api/productsApi';
 import { toast } from 'react-toastify';
+import { memo } from 'react';
 
 type TLikeButtonProps = {
 	product: Product;
 };
-export const LikeButton = ({ product }: TLikeButtonProps) => {
+export const LikeButton = memo(({ product }: TLikeButtonProps) => {
 	const accessToken = useAppSelector(userSelectors.getAccessToken);
 	const user = useAppSelector(userSelectors.getUser);
 
@@ -49,4 +51,4 @@ export const LikeButton = ({ product }: TLikeButtonProps) => {
 			<LikeSvg />
 		</button>
 	);
-};
+});
