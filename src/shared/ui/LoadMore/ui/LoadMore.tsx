@@ -1,8 +1,9 @@
+/* eslint-disable react/display-name */
 import { Alert, CircularProgress, Stack } from '@mui/material';
-import { useRef } from 'react';
+import { memo, useRef } from 'react';
 import { useLoadMore } from '../hooks/useLoadMore';
 
-export const LoadMore = () => {
+export const LoadMore = memo(() => {
 	const ref = useRef<HTMLDivElement>(null);
 	const { isEndOfList, isFetching } = useLoadMore({ ref });
 
@@ -17,4 +18,4 @@ export const LoadMore = () => {
 			{isEndOfList && <Alert severity='success'>End of list!</Alert>}
 		</Stack>
 	);
-};
+});

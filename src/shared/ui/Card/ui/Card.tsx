@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import classNames from 'classnames';
 import s from './Card.module.css';
 import { Price } from './Price/ui/Price';
@@ -7,11 +8,12 @@ import { useAppSelector } from '../../../store/utils';
 import { cartSelectors } from '../../../store/slices/cart';
 import { useAddToCart } from '../../../hooks/useAddToCart';
 import { CartCounter } from '../../CartCounter';
+import { memo } from 'react';
 
 type CardProps = {
 	product: Product;
 };
-export const Card = ({ product }: CardProps) => {
+export const Card = memo(({ product }: CardProps) => {
 	const { discount, price, name, tags, id, images } = product;
 	const cartProducts = useAppSelector(cartSelectors.getCartProducts);
 	const isProductInCart = cartProducts.some((p) => p.id === id);
@@ -67,4 +69,4 @@ export const Card = ({ product }: CardProps) => {
 			)}
 		</article>
 	);
-};
+});

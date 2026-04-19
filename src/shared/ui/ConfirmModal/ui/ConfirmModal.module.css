@@ -1,0 +1,62 @@
+.overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 10000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #00000080;
+}
+
+.modal {
+	width: 90%;
+	max-width: 400px;
+	padding: 24px;
+	background: white;
+	box-shadow: 0 4px 12px #00000026;
+}
+
+.header {
+	margin-bottom: 16px;
+}
+
+.title {
+	margin: 0;
+	font-weight: 600;
+	font-size: 18px;
+}
+
+.message {
+	margin: 8px 0 20px;
+	color: #555555;
+	font-size: 14px;
+}
+
+.actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 12px;
+}
+
+.btn {
+	padding: 6px 16px;
+	font-size: 14px;
+	background: white;
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.btnprimary {
+	color: black;
+	background: #ffe44d;
+	border-color: #ffe44d;
+}
+
+.btn:focus,
+.btn:focus-visible,
+.btnprimary:focus,
+.btnprimary:focus-visible {
+	outline: 2px solid #ffe44d;
+	outline-offset: 2px;
+}
